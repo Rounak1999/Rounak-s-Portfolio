@@ -1,0 +1,135 @@
+.about {
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--accent-gradient);
+  opacity: 0.3;
+}
+
+.about__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about__bio {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.about__bio strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.about__tag {
+  padding: 6px 16px;
+  background: rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: var(--radius-xl);
+  font-size: 0.82rem;
+  color: var(--accent-secondary);
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.about__tag:hover {
+  background: rgba(108, 99, 255, 0.2);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.about__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about__highlight-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(22, 22, 56, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.about__highlight-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(108, 99, 255, 0.3);
+  transform: translateX(8px);
+  box-shadow: var(--shadow-glow);
+}
+
+.about__highlight-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-gradient);
+  border-radius: var(--radius-sm);
+  color: white;
+}
+
+.about__highlight-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.about__highlight-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .about__content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__highlight-card {
+    padding: 16px;
+  }
+
+  .about__highlight-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .about__highlight-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+}
